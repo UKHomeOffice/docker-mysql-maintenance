@@ -39,7 +39,7 @@ will echo `hello`
 
 * `MYSQL_HOST` - Host of MySQL server
 * `MYSQL_PORT` - MySQL Port (defaults to `3306`)
-* `DEFAULT_PW` - Default password your ERBs are started up with
+* `DEFAULT_PW` - Default password your MySQL server is started up with (defaults to `changeme`)
 * `MYSQL_PASSWORD_PATH` - Path to file with new password in
 
 #### Useful File Locations

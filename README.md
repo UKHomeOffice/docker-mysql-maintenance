@@ -24,7 +24,7 @@ Provide no parameters and the container will ensure the root password is set cor
 in the directory and exit
 
 ```shell
-docker run quay.io/ukhomeofficedigital/mysql-maintenance:v0.1.0 parameters
+docker run quay.io/ukhomeofficedigital/mysql-maintenance:v0.1.0
 ```
 
 Provide any other parameter and it'll execute it

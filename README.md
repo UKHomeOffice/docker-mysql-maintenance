@@ -47,6 +47,39 @@ will echo `hello`
 * `/docker-entrypoint-initdb.d/*.sh` - Will be executed. MySQL password and user root is already set.
 * `/docker-entrypoint-initdb.d/*.sql` - Will be ran as root mysql user
 
+#### Kubernetes Example
+
+```yaml
+apiVersion: v1
+kind: Pod
+metadata:
+  labels:
+    db: mysql
+    type: oneshot
+    maintenance: true
+  name: mysql-maintenance
+spec:
+  containers:
+  - image: quay.io/ukhomeofficedigital/mysql-maintenance:v0.1.0
+    name: mysql-maintenance
+    env:
+    - name: MYSQL_HOST
+      value: mymysqlserver
+    - name: MYSQL_PASSWORD_PATH
+      value: /secrets/password.txt
+    volumeMounts:
+    - mountPath: /secrets
+      name: mysql-password
+  imagePullPolicy: Always
+  restartPolicy: Never
+  volumes:
+    -
+      name: mysql-password
+      secret:
+        secretName: "mysql-password"
+```
+
+
 ## Built With
 
 * [ukhomeofficedigital/mysql v0.5.0](https://github.com/UKHomeOffice/docker-mysql/releases/tag/v0.5.0)

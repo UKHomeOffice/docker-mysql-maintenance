@@ -1,5 +1,7 @@
 # Docker MySQL Maintenance Container
 
+[![Build Status](https://travis-ci.org/UKHomeOffice/docker-mysql-maintenance.svg?branch=master)](https://travis-ci.org/UKHomeOffice/docker-mysql-maintenance)
+
 This is a one shot docker container that change your MySQL root password from the default. Optionally it can also run 
 scripts and SQL after it has done this to do basic DB initialisation.
 
